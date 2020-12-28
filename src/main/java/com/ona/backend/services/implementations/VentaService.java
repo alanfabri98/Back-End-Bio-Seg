@@ -4,11 +4,12 @@ import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ona.backend.models.dao.IVenta;
 import com.ona.backend.models.entities.Venta;
 import com.ona.backend.services.interfaces.IVentaService;
-
+@Service
 public class VentaService implements IVentaService{
 
 	@Autowired //Inyección de dependencias

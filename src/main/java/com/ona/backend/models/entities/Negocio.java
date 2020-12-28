@@ -9,11 +9,8 @@ import javax.persistence.Column;
 import javax.persistence.Basic;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.GeneratedValue;
-
-import java.io.Serializable;
 
 @Table(name="Negocios")
 @Entity

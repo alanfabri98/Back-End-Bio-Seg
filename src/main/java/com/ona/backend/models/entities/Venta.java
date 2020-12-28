@@ -21,8 +21,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 
-import java.io.Serializable;
-
 @Table(name="Ventas")
 @Entity
 public class Venta implements Serializable {

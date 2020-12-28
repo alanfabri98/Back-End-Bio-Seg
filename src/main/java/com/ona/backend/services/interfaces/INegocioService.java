@@ -1,8 +1,6 @@
 package com.ona.backend.services.interfaces;
 
 import com.ona.backend.models.entities.Negocio;
-import com.ona.backend.models.entities.Venta;
-
 import java.util.List;
 
 public interface INegocioService {

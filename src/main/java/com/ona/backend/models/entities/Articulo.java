@@ -20,6 +20,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Table(name="Articulos")
 @Entity
 public class Articulo implements Serializable {
@@ -38,7 +40,7 @@ public class Articulo implements Serializable {
 	@Column(name = "precio", length=20)
 	private float precio;
 	
-	@Column(name = "detalle", length=9999)
+	@Column(name = "detalle", length=999)
 	private String detalle;
 	
 	@Column(name = "fecha_registro")	
@@ -46,7 +48,7 @@ public class Articulo implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Calendar fechaRegistro;
 	
-	@Column(name = "url_imagen", length=9999)
+	@Column(name = "url_imagen", length=999)
 	private String urlImagen;
 	
 	@Column(name = "cantidad")
@@ -63,6 +65,7 @@ public class Articulo implements Serializable {
 	@ManyToOne
 	private Categoria categoria;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="articulo", fetch=FetchType.LAZY)
 	private List<Carrito> carritos;
 
