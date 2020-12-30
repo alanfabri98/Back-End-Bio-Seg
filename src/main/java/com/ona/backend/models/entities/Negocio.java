@@ -35,9 +35,6 @@ public class Negocio implements Serializable {
 	@Column(name = "total", length=20)
 	private float total;
 	
-	@Column(name = "estado")
-	private boolean estado;
-	
 	@JoinColumn(name="fk_venta", referencedColumnName="id_venta")
 	@ManyToOne
 	private Venta venta;
@@ -84,14 +81,6 @@ public class Negocio implements Serializable {
 
 	public void setTotal(float total) {
 		this.total = total;
-	}
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
 	}
 
 	public Venta getVenta() {

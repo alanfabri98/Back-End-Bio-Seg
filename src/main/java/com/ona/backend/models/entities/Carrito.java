@@ -26,9 +26,16 @@ public class Carrito implements Serializable {
 	@Basic(optional = false)
 	private Long idCarrito;
 	
+	@Column(name = "estado_carrito")
+	private boolean estadoCarrito;
+	
 	@JoinColumn(name="fk_articulo", referencedColumnName="id_articulo")
 	@ManyToOne
 	private Articulo articulo;
+	
+	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
+	@ManyToOne
+	private Usuario usuario;
 	
 	@OneToMany(mappedBy="carrito", fetch=FetchType.LAZY)
 	private List<Negocio> negocios;
@@ -50,12 +57,28 @@ public class Carrito implements Serializable {
 		this.idCarrito = idCarrito;
 	}
 
+	public boolean isEstadoCarrito() {
+		return estadoCarrito;
+	}
+
+	public void setEstadoCarrito(boolean estadoCarrito) {
+		this.estadoCarrito = estadoCarrito;
+	}
+
 	public Articulo getArticulo() {
 		return articulo;
 	}
 
 	public void setArticulo(Articulo articulo) {
 		this.articulo = articulo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public List<Negocio> getNegocios() {

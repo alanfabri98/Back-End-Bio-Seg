@@ -55,6 +55,9 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	private List<Venta> ventas;
 	
+	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
+	private List<Carrito> carritos;
+	
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
@@ -149,6 +152,14 @@ public class Usuario implements Serializable {
 
 	public void setVentas(List<Venta> ventas) {
 		this.ventas = ventas;
+	}
+
+	public List<Carrito> getCarritos() {
+		return carritos;
+	}
+
+	public void setCarritos(List<Carrito> carritos) {
+		this.carritos = carritos;
 	}
 
 	public Usuario(Long idUsuario) {
