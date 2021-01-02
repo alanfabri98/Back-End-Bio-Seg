@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
 import com.ona.backend.models.entities.Venta;
 import com.ona.backend.services.interfaces.IVentaService;
 
@@ -39,4 +40,20 @@ public class VentaController {
 		return venta;
 	}
 	
+	//-----------------------------------------------------------------//	
+	@GetMapping("/search/{id}")
+	public List<Venta> findAllByUsuarioIdUsuario(@PathVariable int id){
+		return service.findAllByUsuarioIdUsuario(id);
+	}
+	/*
+	@GetMapping("/search/date/{id}")
+	public List<Venta> findAllByUsuarioIdUsuarioAndDate(@PathVariable(value="id") int id, @PathVariable Date fecha){
+		return service.findAllByUsuarioIdUsuarioAndDate(id, fecha);
+	}
+	
+	@GetMapping("/search/date-between/{id}")
+	public List<Venta> findAllByUsuarioIdUsuarioAndDateBetween(@PathVariable(value="id") int id, @PathVariable Date desde, @PathVariable Date hasta){
+		return service.findAllByUsuarioIdUsuarioAndDateBetween(id, desde, hasta);
+	}
+	*/
 }

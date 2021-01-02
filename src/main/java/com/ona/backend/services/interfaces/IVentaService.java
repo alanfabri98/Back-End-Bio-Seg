@@ -17,4 +17,12 @@ public interface IVentaService {
 	
 	public List<Venta> findByAllDataBetween( Date desde, Date hasta );//list
 	
+	/* Custom Methods */	
+	/*
+	public List<Venta> findAllByUsuarioIdUsuarioAndDate( int idUsuario, Date fecha );//list
+
+	public List<Venta> findAllByUsuarioIdUsuarioAndDateBetween(int idUsuario, Date desde, Date hasta);
+	*/
+	public List<Venta> findAllByUsuarioIdUsuario(int idUsuario);
+	
 }

@@ -45,6 +45,23 @@ public class VentaService implements IVentaService{
 		return (List<Venta>) dao.findAll();
 	}
 	
+	//-----------------------------------------------------------------//
+	/*
+	@Override
+	public List<Venta> findAllByUsuarioIdUsuarioAndDate(int idUsuario, Date fecha) {
+		return (List<Venta>) dao.findAll();
+	}
+
+	@Override
+	public List<Venta> findAllByUsuarioIdUsuarioAndDateBetween(int idUsuario, Date desde, Date hasta) {
+		return (List<Venta>) dao.findAll();
+	}
+	*/
+	@Override
+	public List<Venta> findAllByUsuarioIdUsuario(int idUsuario) {
+		return (List<Venta>) dao.findAllByUsuarioIdUsuario(idUsuario);
+	}
+	
 	/*
 	@Override
 	public List<Venta> findAll() {
