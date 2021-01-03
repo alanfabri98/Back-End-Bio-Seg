@@ -42,7 +42,7 @@ public class VentaController {
 	
 	//-----------------------------------------------------------------//	
 	@GetMapping("/search/{id}")
-	public List<Venta> findAllByUsuarioIdUsuario(@PathVariable int id){
+	public List<Venta> findAllByUsuarioIdUsuario(@PathVariable Long id){
 		return service.findAllByUsuarioIdUsuario(id);
 	}
 	/*

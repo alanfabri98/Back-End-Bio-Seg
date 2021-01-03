@@ -23,6 +23,6 @@ public interface IVentaService {
 
 	public List<Venta> findAllByUsuarioIdUsuarioAndDateBetween(int idUsuario, Date desde, Date hasta);
 	*/
-	public List<Venta> findAllByUsuarioIdUsuario(int idUsuario);
+	public List<Venta> findAllByUsuarioIdUsuario(Long idUsuario);
 	
 }
