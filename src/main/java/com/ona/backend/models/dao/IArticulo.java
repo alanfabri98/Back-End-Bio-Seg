@@ -9,10 +9,10 @@ import com.ona.backend.models.entities.Articulo;
 
 public interface IArticulo extends CrudRepository<Articulo, Long>{
  
-	public Articulo findBynombre_articulo(String criteria);
+	public Articulo findByNombreArticulo(String criteria);
 	
 	public List<Articulo> findByusuario(String user);
 	
-	@Query("SELECT ca FROM Categorias ca WHERE ca.nombre_categoria = :categorie ORDER BY ca.nombre_categoria") //JPQL
+	@Query("SELECT ca FROM Categoria ca WHERE ca.nombreCategoria = :categorie ORDER BY ca.nombreCategoria") //JPQL
 	public List<Articulo> findByCategoria(String categorie);
 }

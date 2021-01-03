@@ -12,8 +12,8 @@ public interface IArticuloService {
 	public void delete(Long id);	//delete
 	public List<Articulo> findAll(); //list
 	
-	/**** Custom methods 
+	/**** Custom methods ***/
 	public List<Articulo> findByCategoria(String categoria);
-	public Articulo findBynombre_articulo(String name);
-	public List<Articulo> findByusuario(String user);***/
+	public Articulo findByNombreArticulo(String name);
+	public List<Articulo> findByUsuario(String user);
 }
