@@ -20,7 +20,6 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -59,7 +58,7 @@ public class Articulo implements Serializable {
 	@Column(name = "estado_articulo")
 	private boolean estadoArticulo;
 	
-	@JsonIgnore
+	@JsonIgnore//Forma primitiva de arregral el Bucle Infinita
 	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
 	@ManyToOne
 	private Usuario usuario;
