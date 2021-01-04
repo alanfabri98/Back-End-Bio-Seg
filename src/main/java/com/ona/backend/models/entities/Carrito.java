@@ -37,6 +37,7 @@ public class Carrito implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
+	//**Cardinalidad uno a varios 	//mappedBy apunta al nombre del atributo en la clase Negocio
 	@OneToMany(mappedBy="carrito", fetch=FetchType.LAZY)
 	private List<Negocio> negocios;
 	

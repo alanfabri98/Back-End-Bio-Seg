@@ -20,7 +20,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 
 @Table(name="Articulos")
 @Entity
@@ -65,8 +66,8 @@ public class Articulo implements Serializable {
 	@ManyToOne
 	private Categoria categoria;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="articulo", fetch=FetchType.LAZY)
+	@JsonIdentityReference
+	@OneToMany(mappedBy="articulo", fetch=FetchType.LAZY)	
 	private List<Carrito> carritos;
 
 	public Long getIdArticulo() {
