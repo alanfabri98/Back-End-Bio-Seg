@@ -13,6 +13,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Basic;
 import javax.persistence.Id;
@@ -42,6 +44,7 @@ public class Venta implements Serializable {
 	private Usuario usuario;
 	
 	//**Cardinalidad uno a varios 	//mappedBy apunta al nombre del atributo en la clase Negocio
+	@JsonIgnore
 	@OneToMany(mappedBy="venta", fetch=FetchType.LAZY)
 	private List<Negocio> negocios;
 

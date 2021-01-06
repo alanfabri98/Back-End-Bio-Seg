@@ -14,39 +14,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ona.backend.models.entities.Carrito;
-import com.ona.backend.services.interfaces.ICarritoService;
+import com.ona.backend.models.entities.Categoria;
+import com.ona.backend.services.interfaces.ICategoriaServicio;
 
 @RestController
-@RequestMapping("/api/carrito")
-public class CarritoController {
-
+@RequestMapping("/api/category")
+public class CategoriaController {
+	
 	@Autowired
-	private ICarritoService service;
-		
+	private ICategoriaServicio service;
+	
+	@GetMapping("/{id}")
+	public Categoria retrive(@PathVariable(value="id") Long id) {
+		return service.findById(id);
+	}
+	
 	@GetMapping("")
-	public List<Carrito> list() {
+	public List<Categoria> list(){
 		return service.findAll();
 	}
 	
+	
 	@PostMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Carrito create(@RequestBody Carrito carrito) {		
-		service.save(carrito);
-		return carrito;
+	public Categoria create(@RequestBody Categoria category) {
+		service.save(category);
+		return category;
 	}
-	
-	@PutMapping("/{id}")
+	@PutMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Carrito update(@RequestBody Carrito carrito, @PathVariable Long id) {		 			
-		service.save(carrito);
-		return carrito;
+	public Categoria update(@RequestBody Categoria category, @PathVariable Long id) {
+		service.save(category);
+		return category;
 	}
 	
 	@DeleteMapping("/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
+	
 	
 }
