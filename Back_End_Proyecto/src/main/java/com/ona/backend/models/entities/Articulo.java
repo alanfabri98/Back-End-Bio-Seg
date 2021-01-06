@@ -22,6 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 @Table(name="Articulos")
 @Entity
 public class Articulo implements Serializable {
@@ -57,16 +58,18 @@ public class Articulo implements Serializable {
 	@Column(name = "estado_articulo")
 	private boolean estadoArticulo;
 	
+	@JsonIgnore//Forma primitiva de arregral el Bucle Infinita
 	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
 	@ManyToOne
 	private Usuario usuario;
 	
+	@JsonIgnore
 	@JoinColumn(name="fk_categoria", referencedColumnName="id_categoria")
 	@ManyToOne
 	private Categoria categoria;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="articulo", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="articulo", fetch=FetchType.LAZY)	
 	private List<Carrito> carritos;
 
 	public Long getIdArticulo() {
