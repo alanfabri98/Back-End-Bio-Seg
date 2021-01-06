@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ona.backend.models.dao.INegocio;
 import com.ona.backend.models.entities.Negocio;
+import com.ona.backend.models.entities.Venta;
 import com.ona.backend.services.interfaces.INegocioService;
 
 @Service
@@ -37,5 +38,13 @@ public class NegocioService implements INegocioService{
 	public List<Negocio> findAll() {
 		return (List<Negocio>) dao.findAll();
 	}
+	
+	//-----------------------------------------------------------------//
+	@Override
+	@Transactional(readOnly=true)
+	public List<Negocio> findAllByVentaIdVenta(Long idVenta){
+		return (List<Negocio>) dao.findAllByVentaIdVenta(idVenta);
+	}
 
 }
+

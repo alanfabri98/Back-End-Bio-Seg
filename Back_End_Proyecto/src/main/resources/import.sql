@@ -24,8 +24,17 @@ INSERT INTO `carritos` (`id_carrito`, `fk_articulo`, `fk_usuario`) VALUES (NULL,
 INSERT INTO `carritos` (`id_carrito`, `fk_articulo`, `fk_usuario`) VALUES (NULL, '7', '2'), (NULL, '8', '2');
 INSERT INTO `carritos` (`id_carrito`, `fk_articulo`, `fk_usuario`) VALUES (NULL, '9', '2');
 
---Negocio
-
-
 --Venta
+INSERT INTO `ventas` (`id_venta`, `fecha_venta`, `fk_usuario`) VALUES (NULL, '2020-12-30', '1'), (NULL, '2020-12-30', '1');
+INSERT INTO `ventas` (`id_venta`, `fecha_venta`, `fk_usuario`) VALUES (NULL, '2020-12-30', '2');
+
+--Negocio
+INSERT INTO `negocios` (`id_negocio`, `cantidad`, `precio`, `sub_total`, `total`, `fk_carrito`, `fk_venta`) VALUES (NULL, '10', '0.5', '5', '5.12', '1', '1'), (NULL, '11', '3.5', '38.5', '38.62', '4', '1');
+INSERT INTO `negocios` (`id_negocio`, `cantidad`, `precio`, `sub_total`, `total`, `fk_carrito`, `fk_venta`) VALUES (NULL, '10', '0.5', '5', '5.12', '1', '1'), (NULL, '11', '3.5', '38.5', '38.62', '4', '2');
+INSERT INTO `negocios` (`id_negocio`, `cantidad`, `precio`, `sub_total`, `total`, `fk_carrito`, `fk_venta`) VALUES (NULL, '9', '4.5', '5', '40.62', '5', '2');
+
+
+
+
+
 
