@@ -11,5 +11,5 @@ import com.ona.backend.models.entities.Venta;
 public interface IVenta extends CrudRepository<Venta, Long>{
 		
 	public List<Venta> findAllByUsuarioIdUsuario(Long idUsuario);
-	
+
 }

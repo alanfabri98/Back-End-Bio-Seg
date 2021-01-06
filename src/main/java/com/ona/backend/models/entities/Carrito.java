@@ -28,52 +28,23 @@ public class Carrito implements Serializable {
 	@Basic(optional = false)
 	private Long idCarrito;
 	
-	@Column(name = "estado_carrito")
-	private boolean estadoCarrito;
+	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
+	@ManyToOne
+	private Usuario usuario;
 	
 	@JoinColumn(name="fk_articulo", referencedColumnName="id_articulo")
 	@ManyToOne
 	private Articulo articulo;
 	
-	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
-	@ManyToOne
-	private Usuario usuario;
-	
 	@JsonIgnore
 	@OneToMany(mappedBy="carrito", fetch=FetchType.LAZY)
 	private List<Negocio> negocios;
-	
-	public Carrito() {
-		super();
-	}
-	
-	public Carrito(Long id) {
-		super();
-		this.idCarrito = id;
-	}
-
 	public Long getIdCarrito() {
 		return idCarrito;
 	}
 
 	public void setIdCarrito(Long idCarrito) {
 		this.idCarrito = idCarrito;
-	}
-
-	public boolean isEstadoCarrito() {
-		return estadoCarrito;
-	}
-
-	public void setEstadoCarrito(boolean estadoCarrito) {
-		this.estadoCarrito = estadoCarrito;
-	}
-
-	public Articulo getArticulo() {
-		return articulo;
-	}
-
-	public void setArticulo(Articulo articulo) {
-		this.articulo = articulo;
 	}
 
 	public Usuario getUsuario() {
@@ -84,6 +55,14 @@ public class Carrito implements Serializable {
 		this.usuario = usuario;
 	}
 
+	public Articulo getArticulo() {
+		return articulo;
+	}
+
+	public void setArticulo(Articulo articulo) {
+		this.articulo = articulo;
+	}
+
 	public List<Negocio> getNegocios() {
 		return negocios;
 	}
@@ -92,6 +71,14 @@ public class Carrito implements Serializable {
 		this.negocios = negocios;
 	}
 	
+	public Carrito() {
+		super();
+	}
 	
+	public Carrito(Long id) {
+		super();
+		this.idCarrito = id;
+	}
 	
 }
+
