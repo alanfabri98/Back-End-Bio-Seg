@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Table(name="Usuarios")
 @Entity
 public class Usuario implements Serializable {
@@ -49,12 +51,15 @@ public class Usuario implements Serializable {
 	@Column(name = "rol", length=10)
 	private String rol;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	private List<Articulo> articulos;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	private List<Venta> ventas;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	private List<Carrito> carritos;
 	
