@@ -36,15 +36,7 @@ public class Carrito implements Serializable {
 	@ManyToOne
 	private Articulo articulo;
 	
-<<<<<<< HEAD:Back_End_Proyecto/src/main/java/com/ona/backend/models/entities/Carrito.java
 	@JsonIgnore
-=======
-	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
-	@ManyToOne
-	private Usuario usuario;
-	
-	//**Cardinalidad uno a varios 	//mappedBy apunta al nombre del atributo en la clase Negocio
->>>>>>> dev_manotoa:src/main/java/com/ona/backend/models/entities/Carrito.java
 	@OneToMany(mappedBy="carrito", fetch=FetchType.LAZY)
 	private List<Negocio> negocios;
 	public Long getIdCarrito() {
