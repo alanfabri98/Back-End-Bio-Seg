@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ona.backend.models.dao.IVenta;
 import com.ona.backend.models.entities.Venta;
@@ -35,21 +36,12 @@ public class VentaService implements IVentaService{
 		return (List<Venta>) dao.findAll();
 	}	
 
-	@Override
-	public List<Venta> findByAllData(Date fecha) {
-		return (List<Venta>) dao.findAll();
-	}
-	
-	@Override
-	public List<Venta> findByAllDataBetween(Date desde, Date hasta) {
-		return (List<Venta>) dao.findAll();
-	}
-	
 	//-----------------------------------------------------------------//
 	
 	@Override
+	@Transactional(readOnly=true)
 	public List<Venta> findAllByUsuarioIdUsuario(Long idUsuario) {
 		return (List<Venta>) dao.findAllByUsuarioIdUsuario(idUsuario);
 	}
-	
+		
 }

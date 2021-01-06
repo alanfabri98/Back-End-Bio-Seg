@@ -10,4 +10,7 @@ public interface INegocioService {
 	public Negocio findById(Long id);//retrieve
 	
 	public List<Negocio> findAll();//list
+	
+	/* Custom Methods */
+	public List<Negocio> findAllByVentaIdVenta(Long idVenta);
 }

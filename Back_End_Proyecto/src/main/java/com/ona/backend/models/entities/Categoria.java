@@ -27,7 +27,6 @@ public class Categoria implements Serializable {
 	@Basic(optional = false)
 	private Long idCategoria;
 	
-	@JsonIgnore
 	@Column(name = "nombre_categoria", length=60)
 	private String nombreCategoria;
 	
