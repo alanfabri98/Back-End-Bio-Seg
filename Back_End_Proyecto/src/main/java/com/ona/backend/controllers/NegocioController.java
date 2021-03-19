@@ -46,7 +46,7 @@ public class NegocioController {
 		return new ResponseUtility("Negocio found", HttpStatus.OK, ng);
 	}
 	
-	@PostMapping("")
+	@PostMapping(value = "", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Negocio create(@RequestBody Negocio negocio) {		
 		service.save(negocio);

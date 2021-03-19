@@ -47,7 +47,7 @@ public class VentaController {
 		return new ResponseUtility("Venta found", HttpStatus.OK, vt);
 	}
 	
-	@PostMapping("")
+	@PostMapping(value = "", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Venta create(@RequestBody Venta venta) {		
 		service.save(venta);

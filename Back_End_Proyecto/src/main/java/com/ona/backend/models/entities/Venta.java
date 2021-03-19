@@ -39,7 +39,7 @@ public class Venta implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Calendar fechaVenta;
 	
-	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario")
+	@JoinColumn(name="fk_usuario", referencedColumnName="id_usuario", nullable=false)
 	@ManyToOne
 	private Usuario usuario;
 	

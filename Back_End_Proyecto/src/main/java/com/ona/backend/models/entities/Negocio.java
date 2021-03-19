@@ -35,11 +35,11 @@ public class Negocio implements Serializable {
 	@Column(name = "total", length=20)
 	private float total;
 	
-	@JoinColumn(name="fk_venta", referencedColumnName="id_venta")
+	@JoinColumn(name="fk_venta", referencedColumnName="id_venta", nullable=false)
 	@ManyToOne
 	private Venta venta;
 	
-	@JoinColumn(name="fk_carrito", referencedColumnName="id_carrito")
+	@JoinColumn(name="fk_carrito", referencedColumnName="id_carrito", nullable=false)
 	@ManyToOne
 	private Carrito carrito;
 		
